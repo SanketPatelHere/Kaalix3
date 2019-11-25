@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:title="Home"
+            android:icon="@drawable/home_icon"/>
+        <item
+            android:id="@+id/basket"
+            android:title="Basket"
+            android:icon="@drawable/basket_icon"/>
+        <item
+            android:id="@+id/orders"
+            android:title="Orders"
+            android:icon="@drawable/orders_icon"/>
+        <item
+            android:id="@+id/account"
+            android:title="Account"
+            android:icon="@drawable/profile_icon"/>
+        <item
+            android:id="@+id/search"
+            android:title="What are yout looking for?"
+            android:icon="@drawable/search"
+            app:showAsAction="ifRoom|withText"
+            app:actionViewClass="android.widget.SearchView"/>
+
+    </group>
+</menu>

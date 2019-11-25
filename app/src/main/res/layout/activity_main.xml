@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:id="@+id/d"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#034D4E">
+        <!--<include layout="@layout/nav_header"/>-->
+
+        <!--<com.rany.albeg.wein.springfabmenu.SpringFabMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchorGravity="bottom|left"
+            app:layout_behavior="@string/appbar_springfabmenu_behavior">
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="mini"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="mini"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="mini"/>
+        </com.rany.albeg.wein.springfabmenu.SpringFabMenu>-->
+
+        <LinearLayout
+            android:id="@+id/lv"
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--<ListView
+                android:id="@android:id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/main_list" >
+            </ListView>-->
+            <com.szugyi.circlemenu.view.CircleLayout
+                android:id="@+id/circle_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal" >
+                <include layout="@layout/menu_items" />
+            </com.szugyi.circlemenu.view.CircleLayout>
+
+            <!-- center button -->
+            <!--<FrameLayout
+                android:layout_width="250px"
+                android:layout_height="250px"
+                android:background="@drawable/round_button"
+                android:layout_margin="5dp">
+                <ImageButton
+                    android:id="@+id/btnAnything"
+                    android:layout_width="190px"
+                    android:layout_height="190px"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/round_button"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/anything_icon"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="90px"
+                    android:text="Anything"
+                    android:textColor="#fff">
+                </TextView>
+            </FrameLayout>-->
+            <!-- center button end -->
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnDelivery"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#049293"
+            android:layout_below="@+id/lv"
+            android:layout_alignParentBottom="true"
+            android:drawableLeft="@drawable/pin"
+            android:paddingLeft="15dp"
+            android:singleLine="true"
+            android:text="Delivery: 44 Rue de I'Atlas, Maarif, Morocco"
+            android:textColor="#fff" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/navigation_menu"
+        android:background="#034D4E"
+        app:itemIconTint="#ffffff"
+        app:itemTextColor="#fff"/>
+</androidx.drawerlayout.widget.DrawerLayout>
