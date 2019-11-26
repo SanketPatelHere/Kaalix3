@@ -1,14 +1,11 @@
 package com.example.sanket.kaalix3;
-
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.DividerItemDecoration;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,13 +13,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.internal.NavigationMenuView;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
+import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
+import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
+import com.szugyi.circlemenu.view.CircleImageView;
+import com.szugyi.circlemenu.view.CircleLayout;
 
 public class MainActivity extends AppCompatActivity {
     NavigationView nv;
@@ -33,12 +35,143 @@ public class MainActivity extends AppCompatActivity {
     SearchView searchView;
     Button btnDelivery;
     ImageButton btnAnything, btnCourier, btnBienEtre, btnBienBio, btnChhouittoLamima, btnMarche, btnEnvieDeManger;
+    CircleLayout circle_layout;
+    FloatingActionMenu actionMenu, actionMenu2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnDelivery = (Button)findViewById(R.id.btnDelivery);
+        circle_layout = (CircleLayout)findViewById(R.id.circle_layout);
+        circle_layout.setOnItemSelectedListener(new CircleLayout.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(View view) {
+                actionMenu.close(true);
+                Toast.makeText(MainActivity.this, "Selected = Menu", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        ///////for subactionbutton = fab button ///////////
+        SubActionButton.Builder itemBuilder = new SubActionButton.Builder(this);
+        final ImageView itemIcon1 = new ImageView(this);
+        final ImageView itemIcon2 = new ImageView(this);
+        final ImageView itemIcon3 = new ImageView(this);
+
+        itemIcon1.setImageDrawable(getResources().getDrawable(R.drawable.bein_etre));
+        itemIcon2.setImageDrawable(getResources().getDrawable(R.drawable.bien_bio));
+        itemIcon3.setImageDrawable(getResources().getDrawable(R.drawable.chhouitte));
+
+        //itemIcon1.getLayoutParams().width = 150;
+        //itemIcon1.getLayoutParams().height = 150;
+        SubActionButton button1 = itemBuilder.setContentView(itemIcon1).build();
+        SubActionButton button2 = itemBuilder.setContentView(itemIcon2).build();
+        SubActionButton button3 = itemBuilder.setContentView(itemIcon3).build();
+        AppBarLayout.LayoutParams params=new AppBarLayout.LayoutParams(150,150);
+        button1.setLayoutParams(params);
+        button2.setLayoutParams(params);
+        button3.setLayoutParams(params);
+
+        FrameLayout btn1 = (FrameLayout)findViewById(R.id.speaker_avatar_container1);
+        CircleImageView btn2 = (CircleImageView)findViewById(R.id.btnBienBio);
+        ///
+        actionMenu = new FloatingActionMenu.Builder(this)
+                .addSubActionView(button1)
+                .addSubActionView(button2)
+                .addSubActionView(button3)
+                .setRadius(180)
+                .setStartAngle(0)
+                .setEndAngle(180)
+
+
+
+                .attachTo(btn1)
+                .build();
+        /*actionMenu2 = new FloatingActionMenu.Builder(this)
+                .addSubActionView(button1)
+                .addSubActionView(button2)
+                .addSubActionView(button3)
+                .setRadius(150)
+                .setStartAngle(0)
+                .setEndAngle(180)
+                .attachTo(btn2)
+                .build();*/
+
+
+        actionMenu.setStateChangeListener(new FloatingActionMenu.MenuStateChangeListener() {
+            @Override
+            public void onMenuOpened(FloatingActionMenu floatingActionMenu) {
+               /*itemIcon1.setRotation(0);
+                PropertyValuesHolder pvhR1 = PropertyValuesHolder.ofFloat(View.ROTATION, 45);
+                ObjectAnimator animation1 = ObjectAnimator.ofPropertyValuesHolder(itemIcon1, pvhR1);
+                animation1.start();
+
+                itemIcon2.setRotation(0);
+                PropertyValuesHolder pvhR2 = PropertyValuesHolder.ofFloat(View.ROTATION, 45);
+                ObjectAnimator animation2 = ObjectAnimator.ofPropertyValuesHolder(itemIcon2, pvhR2);
+                animation2.start();
+
+                itemIcon3.setRotation(0);
+                PropertyValuesHolder pvhR3 = PropertyValuesHolder.ofFloat(View.ROTATION, 45);
+                ObjectAnimator animation3 = ObjectAnimator.ofPropertyValuesHolder(itemIcon3, pvhR3);
+                animation3.start();*/
+
+            }
+
+            @Override
+            public void onMenuClosed(FloatingActionMenu floatingActionMenu) {
+                /*itemIcon1.setRotation(45);
+                PropertyValuesHolder pvhR1 = PropertyValuesHolder.ofFloat(View.ROTATION, 0);
+                ObjectAnimator animation1 = ObjectAnimator.ofPropertyValuesHolder(itemIcon1, pvhR1);
+                animation1.start();
+
+                itemIcon2.setRotation(45);
+                PropertyValuesHolder pvhR2 = PropertyValuesHolder.ofFloat(View.ROTATION, 0);
+                ObjectAnimator animation2 = ObjectAnimator.ofPropertyValuesHolder(itemIcon2, pvhR2);
+                animation2.start();
+
+                itemIcon3.setRotation(45);
+                PropertyValuesHolder pvhR3 = PropertyValuesHolder.ofFloat(View.ROTATION, 0);
+                ObjectAnimator animation3 = ObjectAnimator.ofPropertyValuesHolder(itemIcon3, pvhR3);
+                animation3.start();*/
+            }
+
+        });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //serviceWillBeDismissed = true; // the order is important
+                actionMenu.close(true);
+                Toast.makeText(MainActivity.this, "button1", Toast.LENGTH_SHORT).show();
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //serviceWillBeDismissed = true; // the order is important
+                actionMenu.close(true);
+                Toast.makeText(MainActivity.this, "button2", Toast.LENGTH_SHORT).show();
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //serviceWillBeDismissed = true; // the order is important
+                actionMenu.close(true);
+                Toast.makeText(MainActivity.this, "button3", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ///////////////////////////////////////////////////
+
+        /*circle_layout.setOnItemClickListener(new CircleLayout.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view) {
+                Toast.makeText(MainActivity.this, "Clicked = ", Toast.LENGTH_SHORT).show();
+            }
+        });*/
         //btnAnything = (ImageButton)findViewById(R.id.btnAnything);
 
         /*btnCourier = (ImageButton) findViewById(R.id.btnCourier);

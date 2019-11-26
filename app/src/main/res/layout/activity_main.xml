@@ -16,29 +16,7 @@
         android:background="#034D4E">
         <!--<include layout="@layout/nav_header"/>-->
 
-        <!--<com.rany.albeg.wein.springfabmenu.SpringFabMenu
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_anchorGravity="bottom|left"
-            app:layout_behavior="@string/appbar_springfabmenu_behavior">
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:fabSize="mini"/>
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:fabSize="mini"/>
-
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:fabSize="mini"/>
-        </com.rany.albeg.wein.springfabmenu.SpringFabMenu>-->
 
         <LinearLayout
             android:id="@+id/lv"
@@ -47,27 +25,14 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <!--<ListView
-                android:id="@android:id/list"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:entries="@array/main_list" >
-            </ListView>-->
-            <!--<android.support.design.widget.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button2"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@android:drawable/ic_menu_search"
-                />-->
-
             <com.szugyi.circlemenu.view.CircleLayout
                 android:id="@+id/circle_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal" >
+                app:isRotating="true"
+                android:layout_gravity="center_horizontal">
                 <include layout="@layout/menu_items" />
+
             </com.szugyi.circlemenu.view.CircleLayout>
 
             <!-- center button -->

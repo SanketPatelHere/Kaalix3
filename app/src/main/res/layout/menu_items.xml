@@ -20,6 +20,7 @@
             android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/coursier"
+
             circle:name="tag" />
         <TextView
             android:id="@+id/tvCourier"
@@ -77,6 +78,7 @@
             android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/bein_etre"
+
             circle:name="tag" />
         <TextView
             android:id="@+id/tvBienEtre"
@@ -106,6 +108,7 @@
             android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/jai_faim"
+
             circle:name="tag" />
         <TextView
             android:id="@+id/tvEnvieDeManger"
@@ -135,6 +138,7 @@
             android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/marche"
+
             circle:name="tag" />
         <TextView
             android:id="@+id/tvMarche"
@@ -146,6 +150,7 @@
             android:gravity="center"
             android:text="Marche"
             android:textColor="#fff"/>
+
     </FrameLayout>
 
     <FrameLayout
@@ -164,6 +169,7 @@
             android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/chhouitte"
+
             circle:name="tag" />
         <TextView
             android:id="@+id/tvChhouitte"
