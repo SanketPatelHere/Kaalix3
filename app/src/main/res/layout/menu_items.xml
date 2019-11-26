@@ -1,13 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:circle="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="250dp"
+    android:layout_height="250dp">
 
-    <com.szugyi.circlemenu.view.CircleImageView
+    <FrameLayout
+        android:id="@+id/speaker_avatar_container1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/round_button"
+        >
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            android:id="@+id/btnCourier"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:elevation="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/coursier"
+            circle:name="tag" />
+        <TextView
+            android:id="@+id/tvCourier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:layout_marginTop="50px"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center"
+            android:text="Courier"
+            android:textColor="#fff"/>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/speaker_avatar_container2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/round_button"
+        >
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            android:id="@+id/btnBienBio"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:elevation="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/bien_bio"
+            circle:name="tag" />
+        <TextView
+            android:id="@+id/tvBienBio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:layout_marginTop="50px"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center"
+            android:text="Bien Bio"
+            android:textColor="#fff"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/speaker_avatar_container3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/round_button"
+        >
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            android:id="@+id/btnBienEtre"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:elevation="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/bein_etre"
+            circle:name="tag" />
+        <TextView
+            android:id="@+id/tvBienEtre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:layout_marginTop="50px"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center"
+            android:text="Bien Bio"
+            android:textColor="#fff"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/speaker_avatar_container4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/round_button"
+        >
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            android:id="@+id/btnEnvieDeManger"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:elevation="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/jai_faim"
+            circle:name="tag" />
+        <TextView
+            android:id="@+id/tvEnvieDeManger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:layout_marginTop="50px"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center"
+            android:text="Envie De Manger!"
+            android:textColor="#fff"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/speaker_avatar_container5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/round_button"
+        >
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            android:id="@+id/btnMarche"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:elevation="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/marche"
+            circle:name="tag" />
+        <TextView
+            android:id="@+id/tvMarche"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:layout_marginTop="50px"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center"
+            android:text="Marche"
+            android:textColor="#fff"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/speaker_avatar_container6"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/round_button"
+        >
+
+        <com.szugyi.circlemenu.view.CircleImageView
+            android:id="@+id/btnChhouitte"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:elevation="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/chhouitte"
+            circle:name="tag" />
+        <TextView
+            android:id="@+id/tvChhouitte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:layout_marginTop="50px"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center"
+            android:text="Chhouitte"
+            android:textColor="#fff"/>
+    </FrameLayout>
+    <!--<com.szugyi.circlemenu.view.CircleImageView
         android:id="@+id/main_calendar_image"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@drawable/round_button"
         android:elevation="2dp"
         android:src="@drawable/anything_icon"
@@ -15,8 +187,8 @@
 
     <com.szugyi.circlemenu.view.CircleImageView
         android:id="@+id/main_cloud_image"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@drawable/round_button"
         android:elevation="2dp"
         android:src="@drawable/bien_bio"
@@ -25,8 +197,8 @@
 
     <com.szugyi.circlemenu.view.CircleImageView
         android:id="@+id/main_mail_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@drawable/round_button"
         android:elevation="2dp"
         android:src="@drawable/bein_etre"
@@ -34,16 +206,16 @@
 
     <com.szugyi.circlemenu.view.CircleImageView
         android:id="@+id/main_key_image"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@drawable/round_button"
         android:src="@drawable/chhouitte"
         circle:name="key" />
 
     <com.szugyi.circlemenu.view.CircleImageView
         android:id="@+id/main_profile_image"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@drawable/round_button"
         android:elevation="2dp"
         android:src="@drawable/jai_faim"
@@ -51,11 +223,11 @@
 
     <com.szugyi.circlemenu.view.CircleImageView
         android:id="@+id/main_tap_image"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@drawable/round_button"
         android:elevation="2dp"
         android:src="@drawable/coursier"
-        circle:name="tag" />
+        circle:name="tag" />-->
 
 </merge>
